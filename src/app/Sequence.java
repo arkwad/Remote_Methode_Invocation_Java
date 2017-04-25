@@ -30,9 +30,6 @@ public abstract class Sequence<T> extends Pocket
 		this.channelNr = channelNr;
 		this.resolution =  resolution;
 		this.unit = unit;
-		
-		
-		// TODO Auto-generated constructor stub
-	}
 
+	}
 }

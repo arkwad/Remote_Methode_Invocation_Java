@@ -1,5 +1,7 @@
 package app;
 
+import java.util.Random;
+
 @SuppressWarnings("rawtypes")
 public final class TimeHistory extends Sequence 
 {
@@ -8,16 +10,17 @@ public final class TimeHistory extends Sequence
 	 */
 	private static final long serialVersionUID = 1L;
 	protected double sensitivity;
-
+	Random rand = new Random();
+	
+	
 	public String toStrings()
 	{
 		return(super.toStrings()
 				+"\nSensitivity: " + Double.toString(sensitivity) + "\n" );
 	}
-	
 	public String get_name()
 	{
-		return this.device + "_"+this.channelNr;
+		return this.device;
 	}
 	public TimeHistory(double sensitivity,
 						int	channelNr,
@@ -27,7 +30,6 @@ public final class TimeHistory extends Sequence
 						String  description,
 						long 	date)
 	{
-		
 		super(channelNr,
 				unit,
 				resolution,
@@ -37,8 +39,12 @@ public final class TimeHistory extends Sequence
 		this.sensitivity = sensitivity;
 	}
 	public TimeHistory()
-	{
-		super(4,"UNIT_2",1.2,"DEVICE_2","This is dummy TimeHistory class's instance!!!",123456);
+	{	
+		super(4,"UNIT_2",1.2,"DEVICE_2","This is dummy TimeHistory class's instance",123456);
+		Integer  n = rand.nextInt(50) + 1;
+		Integer  n1 = rand.nextInt(50) + 1;
+		this.device = "DEVICE_"+n.toString();
+		this.channelNr = n1;
 	}
 
 	public static void main(String Args[])
@@ -51,7 +57,6 @@ public final class TimeHistory extends Sequence
 										"description",
 										1234);
 		
-		System.out.println(th.toStrings());
-		
+		System.out.println(th.toStrings());	
 	}
 }

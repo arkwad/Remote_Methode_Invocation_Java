@@ -28,8 +28,6 @@ public abstract class Pocket implements Serializable
 		this.device = device;
 		this.Description = description;
 		this.date = date;
-		
-		// TODO Auto-generated constructor stub
 	}
 
 }
