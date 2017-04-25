@@ -3,8 +3,6 @@
  */
 package app;
 
-import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
  
 public class Main 
@@ -14,29 +12,28 @@ public class Main
 	RMI_Client client;
 	RMI_Server server;
 	
-	protected Main() throws RemoteException
+	protected Main() throws Exception
 	{
-		this.client = new RMI_Client();
 		this.server = new RMI_Server();
+		this.client = new RMI_Client();
+		
 	}
 	
-     public static void main(String[] args) throws RemoteException
-     {
-    	 Main app = new Main();
-         try 
-         {
-              register = LocateRegistry.createRegistry(1099);
-              register.rebind("Server", app.get_server());
-              System.out.println("Server is ready!");
-         } 
-         catch (Exception e) 
-         {
-              e.printStackTrace();
-         }
-         try 
-         {
-               System.out.println("Response of server: " + app.get_client().comm("127.0.0.1"));
-         } 
+    public static void main(String[] args) throws Exception
+    {
+    	Main app = new Main();
+        try 
+        {
+
+        } 
+        catch (Exception e) 
+        {
+             e.printStackTrace();
+        }
+        try 
+        {
+              System.out.println("Response of server: " + app.get_client().comm("127.0.0.1"));
+        } 
          catch (Exception e) 
          {
               e.printStackTrace();

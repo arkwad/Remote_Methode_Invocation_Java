@@ -14,5 +14,5 @@ import java.rmi.RemoteException;
 
 public interface RMI_Interface extends Remote
 {
-	String sayHello() throws RemoteException;
+	Boolean register_object(Object object) throws RemoteException;
 }

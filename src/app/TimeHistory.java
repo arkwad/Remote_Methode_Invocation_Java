@@ -35,9 +35,11 @@ public final class TimeHistory extends Sequence
 				description,
 				date);
 		this.sensitivity = sensitivity;
-		// TODO Auto-generated constructor stub
 	}
-	
+	public TimeHistory()
+	{
+		super(4,"UNIT_2",1.2,"DEVICE_2","This is dummy TimeHistory class's instance!!!",123456);
+	}
 
 	public static void main(String Args[])
 	{
